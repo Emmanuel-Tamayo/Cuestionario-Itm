@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario ITM</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+   <main>
+
+        <form id="formulario">
+            <section>
+                <h1>Cuestionario sobre la experiencia estudiantil en el ITM</h1>
+                <p>
+                    <strong>Objetivo:</strong> Conocer a los estudiantes, identificar la carrera que mas personas eligen y conocer sobre la experiencia que han tenido en el ITM.
+                </p>
+            </section> <br>
+
+            <section>
+                <h2>1. Información personal</h2>
+
+                <div>
+                    <label for="nombre">1. Nombre: <span class="obligatorio">*</span></label>
+                    <input
+                       type="text"
+                       id="nombre"
+                       name="nombre"
+                       placeholder=" "
+                       required
+                       minlength="3"
+                       maxlength="60"
+                       pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]*"
+                       title="Solo letras y espacios, sin números ni simbolos"
+                       >
+                </div> <br>
+
+                <div>
+                    <label for="correo">2. Correo: <span class="obligatorio">*</span></label>
+                    <input 
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder=" "
+                        required
+                        >
+                </div> <br>
+
+                <div>
+                    <label for="Carrera">3. ¿Que carrera estudias?: <span class="obligatorio">*</span></label>
+                    <input 
+                        type="text"
+                        id="Carrera"
+                        name="Carrera"
+                        placeholder=" "
+                        required
+                        minlength="3"
+                        maxlength="60"
+                        pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]*"
+                        title="Solo letras y espacios, sin números ni simbolos"
+                        >
+                </div> <br>
+               
+            </section>
+
+            <section>
+                <h2>2. Opinión sobre el ITM</h2>
+
+                <div>
+                    <label for="experiencia">1. ¿Cómo calificarías tu experiencia en el ITM?: <span class="obligatorio">*</span></label>
+                    <select id="experiencia" name="experiencia" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="excelente">Excelente</option>
+                        <option value="buena">Buena</option>
+                        <option value="regular">Regular</option>
+                        <option value="mala">Mala</option>
+                    </select>
+                </div> <br>
+
+                
+                <div>
+                    <label for="materia">2. ¿Qué materia es la mas gonorrea?: <span class="obligatorio">*</span></label>
+                    <select id="materia" name="materia" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="MB Informatica">MB Informatica</option>
+                        <option value="Calculo DF,INT">Calculo DF,INT</option>
+                        <option value="Geometria, Algebra">Geometria,Algebra</option>
+                    </select>
+                </div>
+            </section> <br>
+
+            <button type="submit">Guardar</button>
+            
+
+        </form>
+        <article id="resultados">
+            <h2>Respuestas Guardadas</h2>
+            <p id="Contador">0 respuestas</p>
+
+            <div class="tabla-caja">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Carrera</th>
+                            <th>Experiencia</th>
+                            <th>Materia</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-cuerpo"></tbody>
+                </table>
+            </div>
+        </article>
+    </main>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
